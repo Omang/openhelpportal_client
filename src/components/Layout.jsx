@@ -10,7 +10,7 @@ const Layout = () => {
             Open Help Portal
         </h1>
         <p className="md:text-lg text-sm text-gray-400">
-          Your Answer Hub  
+          Smart Guide  
         </p>
         
     </div>

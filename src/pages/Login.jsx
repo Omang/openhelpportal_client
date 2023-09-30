@@ -20,7 +20,7 @@ const Login = () => {
      setErr('');
     try{
        console.log({mobilenumber: mobilenum, password: pass})
-      const {data} =await axios.post('/user/login', {mobilenumber: mobilenum, password: pass})
+      const {data} =await axios.post('/user/login', {mobilenumber: `+267${mobilenum}` , password: pass})
       console.log(data);
       if(data?.message){
           setLoading(false);
@@ -50,17 +50,21 @@ const Login = () => {
   }
   return (
     <div className=' flex items-center justify-center mt-8'>
-      <div className=' border border-green-500 rounded-2xl shadow-2xl w-[400px]'>
+      <div className=' border border-gray-500 rounded-2xl shadow-2xl w-[400px]'>
+      <div className='flex flex-col justify-center items-center'>
+
+<h1 className='text-lg text-gray-500'>Login</h1>
+</div>
         {err && (<p className='ml-4 text-sm text-red-500 font-bold uppercase'>
           wrong Password / Phonenumber
         </p>)}
         {loading ? <GridLoader color={'#7ED321'} loading={loading} size={30} /> : <form className='flex flex-col p-2' onSubmit={loginuser}>
-           <input type="number" placeholder='Enter your Mobile Number' required value={mobilenum} onChange={e=>setMobilenum(e.target.value)} className='border border-green-500 rounded-full m-3 px-3' />
-           <input type="password" placeholder='Your password' required value={pass} onChange={e=>Setpass(e.target.value)} className='border border-green-500 rounded-full m-3 px-3' />
+           <input type="number" placeholder='Enter your Mobile Number' required value={mobilenum} onChange={e=>setMobilenum(e.target.value)} className='border-b border-gray-500 rounded-full m-3 px-3' />
+           <input type="password" placeholder='Your password' required value={pass} onChange={e=>Setpass(e.target.value)} className='border-b border-gray-500 rounded-full m-3 px-3' />
            <div className="flex flex-row justify-between">
-            <Link className='underline hover:text-green-600 text-red-600' to={'/'}>Go Back</Link>
-           <button type='submit' className='border rounded-full px-3 hover:text-white bg-green-500'>Login</button>
-           <Link className='underline hover:text-green-600 text-red-600' to={'/register'}>New account</Link>
+            <Link className='underline hover:text-gray-600 text-red-600' to={'/'}>Go Back</Link>
+           <button type='submit' className='border rounded-full px-3 hover:text-white bg-gray-500'>Login</button>
+           <Link className='underline hover:text-gray-600 text-red-600' to={'/register'}>New account</Link>
            </div>
         </form>}
       </div>

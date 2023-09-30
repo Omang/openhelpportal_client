@@ -15,10 +15,12 @@ const Pnavbar = () => {
         <Button />
         </div>
         <ul className={`md:hidden bg-white absolute w-full h-full bottom-0 py-24 pl-4`}>
-        <Pnavbarlinks /> 
-            <div className="py-5">
+         
+            <div className="py-5 right-0">
             <Button />
             </div>
+            
+            <Pnavbarlinks />
         </ul>
       </div>
     </nav>

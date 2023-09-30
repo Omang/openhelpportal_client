@@ -15,7 +15,7 @@ const Navbar = () => {
         <div className="md:block hidden">
         <Button />
         </div>
-        <ul className={`md:hidden bg-white absolute w-full h-full bottom-0 py-24 pl-4`}>
+        <ul className={`md:hidden bg-white  w-full   pl-4`}>
             <NavLinks /> 
             <div className="py-5">
             <Button />

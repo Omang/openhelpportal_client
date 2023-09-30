@@ -10,7 +10,7 @@ const Pnavbarlinks = () => {
    }
 
    const linkClasses = (type=null)=>{
-    let classes = 'bg-green-500 text-white rounded-full px-2';
+    let classes = 'bg-gray-500 text-white rounded-full px-2';
     if(type === subpage){
        return classes;
     }
@@ -20,8 +20,7 @@ const Pnavbarlinks = () => {
       
         <div >
             <div className=' flex justify-around px-3 text-left gap-8 md:cursor-pointer'>
-            <Link to={'/public/phonebook'} className={`${linkClasses('phonebook')} hover:border-b hover:border-green-500`} >Phonebook</Link> 
-            <Link to={'/public/gov'} className={`${linkClasses('gov')} hover:border-b hover:border-green-500`} >Public Stuff</Link>
+            <Link to={'/public/phonebook'} className={`${linkClasses('phonebook')} hover:border-b hover:border-gray-500`} >Phonebook</Link>
             
             </div>
         </div>

@@ -1,30 +1,83 @@
+import axios from 'axios';
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { TypeAnimation } from 'react-type-animation';
+import { GridLoader } from 'react-spinners';
 
 const Peoplemain = ({peopletype}) => {
+  const [loading, setLoading] = useState(false);
+  const [search, setSearch] = useState('');
+  const [result, setResult] = useState([]);
+
+  const searchitem = async(e)=>{
+    e.preventDefault();
+    try{
+      setLoading(true);
+      setResult([]);
+      const {data} = await axios.post('/ai/school', {
+        question: search
+      })
+      if(data.message){
+        setLoading(false);
+        setResult(prev=>[...prev, data.message])
+        setSearch('')
+
+      }else{
+        setLoading(false);
+        setResult('No answer at the moment')
+        setSearch('')
+      }
+
+    }catch(error){
+      setLoading(false);
+      console.log(error);
+    }
+  }
+
   return (
   <>
-    <div className='my-4 mx-4 px-4 py-4 flex  gap-4'>
-        <div className='w-[320px] h-[300px] border flex flex-col p-4'>
-           <button className='bg-green-500 rounded-xl font-[Poppins] hover:bg-white hover:border hover:border-green-500 hover:text-black text-white py-2 px-6'>NEW CHAT</button>
-           <div className='mt-2 px-2 border border-green-300 flex flex-col'>
-               <div className='font-[Poppins] text-3xl items-center justify-center'>
-                <h1>Chat History</h1>
-               </div>
-               <Link className='text-lg font-[Poppins] underline hover:text-green-600'>Active after payment made</Link>
-               <Link className='text-lg font-[Poppins] underline hover:text-green-600'>Active after payment made</Link>
-               <Link className='text-lg font-[Poppins] underline hover:text-green-600'>Active after payment made</Link>
-               <Link className='text-lg font-[Poppins] underline hover:text-green-600'>Active after payment made</Link>
-               <Link className='text-lg font-[Poppins] underline hover:text-green-600'>Active after payment made</Link>
-           </div>
-           <Link to={'/public'} className='bg-green-500 rounded-xl font-[Poppins] hover:bg-white hover:border hover:border-green-500 hover:text-black text-white mt-2 py-2 px-6'>Profile</Link>
-        </div>
-        <div className='w-[820px] h-[600px] border relative'>
-           <div className="flex flex-col">
-            <input type='text' placeholder='Type in your question and press enter...' className='top-90 border border-green-400 rounded-lg py-3 px-2 m-4 ' />
-            <div className='bg-green-500 text-white rounded-lg py-3 px-2 m-4'>
-                <p>Welcome to {peopletype} Chatbot. Please ask questions related to {peopletype}</p>
+    <div className='xs:mt-32 my-4 mx-4 px-4 py-4 flex flex-col justify-center items-center '>
+        
+        <div className='border w-[600px]'>
+           <div className="flex flex-col" >
+
+           {loading ? <GridLoader color={'#7ED321'} loading={loading} size={5} /> : <>
+           
+           {result ? <>
+            {result.map(item=>(
+
+<div key={item} className='bg-gray-400 text-white rounded-lg py-3 px-2 m-4'>
+<TypeAnimation
+sequence={[
+// Same substring at the start will only be typed out once, initially
+`${item}`,
+1000
+]}
+wrapper="span"
+speed={50}
+style={{ fontSize: '2em', display: 'inline-block' }}
+repeat={Infinity}
+cursor={false}
+/> </div>
+              
+            ))}
+              
+           </>: <>
+
+           <div className='bg-gray-400 text-white rounded-lg py-3 px-2 m-4'>
+                <p>Welcome to {peopletype} Chatbot. Please query contacts on the {peopletype}</p>
             </div>
+           
+           </>}
+           
+           </>}
+            
+          
+
+           <form  className="flex flex-col" onSubmit={searchitem}>
+            <input type='text' value={search} onChange={e=>setSearch(e.target.value)} placeholder='Type in your query and press enter...' 
+            className=' border border-gray-400 rounded-lg py-3 px-2 m-4 ' />
+            </form>
            </div>
         </div>
 

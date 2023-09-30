@@ -3,6 +3,7 @@ import Pnavbar from '../../components/Pnavbar'
 import Peoplemain from '../../components/Peoplemain'
 import { UserContext } from '../../UserContext'
 import NotificationContext from '../../NotificationContext'
+import { TypeAnimation } from 'react-type-animation';
 
 
 const Phonebook = () => {
