@@ -10,14 +10,14 @@ const WelcomePage = () => {
     </div>
        
     <div className="flex md:flex-row md:items-center justify-center items-center md:justify-center md:gap-4 flex-col mt-8">
-     <div className=' relative flex flex-col border bg-gray-300 rounded-md shadow-2xl md:w-[400px] md:h-[300px] h-[200px] mb-4 w-[200px] p-2'>
-        <div className="flex justify-between">
-            <h5 className="text-xl text-white font-semibold">
+     <div className=' relative flex flex-col border border-gray-300 rounded-md shadow-2xl md:w-[400px] md:h-[300px] h-[200px] mb-4 w-[200px] p-2'>
+        <div className="flex justify-center items-center">
+            <h5 className="font-bold text-white">
                 Smart Contacts
             </h5>
             </div>
-            <div className="rounded-sm mx-auto h-full flex flex-col w-full p-1">
-                <p className=" md:text-lg text-xs font-serif">
+            <div className="rounded-sm mx-auto h-full flex flex-col w-full p-4">
+                <p className=" md:text-lg text-xl font-serif">
                     Search Botswana Government ministries, parastials, district councils contact details
                     
                 </p>
