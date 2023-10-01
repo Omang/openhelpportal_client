@@ -17,14 +17,15 @@ const Peoplemain = ({peopletype}) => {
       const {data} = await axios.post('/ai/school', {
         question: search
       })
-      if(data.message){
+      if(data.message !== ''){
         setLoading(false);
+        console.log(data.message);
         setResult(prev=>[...prev, data.message])
         setSearch('')
 
       }else{
         setLoading(false);
-        setResult('No answer at the moment')
+        setResult(prev=>[...prev, 'Only contacts related query is asked! sorry'])
         setSearch('')
       }
 
