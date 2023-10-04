@@ -15,6 +15,9 @@ const Layout = () => {
         
     </div>
       <Outlet />
+      <p className="md:text-lg text-sm mt-16 mb-2 px-8 text-gray-400">
+          Email us: sales@manwishinvestments.co.bw or Call: +267 73725320  
+        </p>
     </div>
   )
 }
