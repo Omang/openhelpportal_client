@@ -17,10 +17,22 @@ const WelcomePage = () => {
             </h5>
             </div>
             <div className="rounded-sm mx-auto h-full flex flex-col w-full p-4">
-                <p className=" md:text-lg text-xl font-serif">
-                    Search Botswana Government ministries, parastials, district councils contact details
-                    
+                <p className="px-8 mx-4 my-2 md:text-2xl text-2xl text-red-300 font-serif">
+                    Search Contact Details   
                 </p>
+                <p className=" md:text-lg text-xl font-serif">
+                    Botswana Government ministries, parastials, district councils contacts   
+                </p>
+                <p className=" md:text-lg text-xl font-serif">
+                    Blood transfusion centers contacts   
+                </p>
+                <p className=" md:text-lg text-xl font-serif">
+                    BTC shops and Mobile dealer around Botswana contacts    
+                </p>
+                <p className=" md:text-lg text-xl font-serif">
+                   BHC Botswana Housing Corporation   
+                </p>
+
                 
 
             </div>

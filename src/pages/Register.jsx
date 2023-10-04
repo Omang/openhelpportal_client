@@ -123,7 +123,7 @@ if(redirect){
           <>
           <form className='flex flex-col p-2' onSubmit={submitcode}>
           <input required type="number" value={sendcode} onChange={e=>setSendcode(e.target.value)} placeholder='Enter Code sent to your number' className='border-b border-gray-500 rounded-full m-3 px-3' />
-          <button type='submit' className='border rounded-full px-3 hover:text-white bg-gray-500'>Register</button>
+          <button type='submit' className='border rounded-full px-3 hover:text-white bg-gray-500'>Submit</button>
           </form>
           </>
         )}
