@@ -19,6 +19,7 @@ import Secondary from './pages/school/Secondary'
 import Senior from './pages/school/Senior'
 import Gov from './pages/public/Gov'
 import Phonebook from './pages/public/Phonebook'
+import Contract from './pages/public/Contract'
 
 const  App =()=> {
 
@@ -35,6 +36,7 @@ const  App =()=> {
          <Route path='/public' element={<People />} />
          <Route path='/public/gov' element={<Gov />} />
          <Route path='/public/phonebook' element={<Phonebook />} />
+         <Route path='/public/contract' element={<Contract />} />
          <Route path='/school/primary' element={<Primary />} />
          <Route path='/school/secondary' element={<Secondary />} />
          <Route path='/school/senior' element={<Senior />} />

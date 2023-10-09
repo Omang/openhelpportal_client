@@ -21,7 +21,7 @@ const Pnavbarlinks = () => {
         <div >
             <div className=' flex justify-around px-3 text-left gap-8 md:cursor-pointer'>
             <Link to={'/public/phonebook'} className={`${linkClasses('phonebook')} hover:border-b hover:border-gray-500`} >Phonebook</Link>
-            
+            <Link to={'/public/contract'} className={`${linkClasses('contract')} hover:border-b hover:border-gray-500`} >SmartContract</Link>
             </div>
         </div>
      
